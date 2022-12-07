@@ -22,5 +22,6 @@ def search(query):
     for token in query_tokens:
         for entry in inverted_index[token]:
             scores[entry[0]] = BM25(length_index[entry[0]],get_avdl(length_index),len(inverted_index[token]),len(length_index),entry[1],1,0)
+            # print(scores[entry[0]], "Here")
     return sorted(scores.items(),key=operator.itemgetter(1))
 

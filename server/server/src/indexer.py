@@ -6,7 +6,7 @@ import json
 
 def get_file_names():
     files = []
-    for file in glob.glob("./server/dependency/documents/*.pdf"):
+    for file in glob.glob("../dependency/documents/*.pdf"):
         files.append(file)
     return files
 
@@ -18,10 +18,10 @@ def make_index(tokens, document_name, index, length):
 
 
 def write(inverted_index,length_index):
-    inv_index_file = open("./server/dependency/indexes/inverted_index.json","w")
+    inv_index_file = open("../dependency/indexes/inverted_index.json","w")
     json.dump(inverted_index,inv_index_file)
 
-    length_index_file = open("./server/dependency/indexes/length_index.json","w")
+    length_index_file = open("../dependency/indexes/length_index.json","w")
     json.dump(length_index,length_index_file)
     
 def generator():

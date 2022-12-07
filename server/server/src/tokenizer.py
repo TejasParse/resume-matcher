@@ -28,11 +28,11 @@ def tokenize(path):
         
         no_punctuations = []
         for token in tokenize:
-            no_punctuations.append(token.rstrip(",:|.-").lower())
+            no_punctuations.append(token.rstrip(",:|.-\n").lower())
 
        
         without_stop_words = []
-
+        
         for word in filter(None, no_punctuations):
             if word not in stopword_list:
                 without_stop_words.append(word)

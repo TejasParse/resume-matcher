@@ -1,10 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .src.ranker import search
-import json
-import requests
-from django.http import StreamingHttpResponse
-import os
 from django.views.decorators.csrf import csrf_exempt
 from django.http import FileResponse
 # from django.contrib.auth.views import login_required
@@ -23,7 +19,7 @@ def find_resume(request):
             res =[]
             for result in results:
                 res.append(result[0])
-            print(res)
+            # print(res)
             return Response({"data":"$".join(res)})
         except:
             return Response({"data":""})
@@ -34,6 +30,7 @@ def showfile(request):
     # handle user custom user permissions
     if request.method == "POST":
         data = request.POST
-        print(data["url"])
-        response = FileResponse(open(data["url"],'rb'),as_attachment=True, content_type='application/pdf')
+        newUrl = ".\\server\\dependency\\documents\\"+data["url"][24:]
+        print(newUrl)
+        response = FileResponse(open(newUrl,'rb'),as_attachment=True, content_type='application/pdf')
         return response
