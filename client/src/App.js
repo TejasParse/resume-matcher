@@ -26,7 +26,12 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data.data.split(/[$]/i));
-        setResumeList([...data.data.split(/[$]/i)]);
+        let resumeList = [...data.data.split(/[$]/i)]
+        if(resumeList[0]=="") {
+          setResumeList([])
+        } else {
+          setResumeList(resumeList);
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -51,6 +56,7 @@ function App() {
   };
   return (
     <div className="App">
+      <h1>Resume Retrieval</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
