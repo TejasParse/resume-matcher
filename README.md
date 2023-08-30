@@ -11,7 +11,8 @@
 - The Client does have several features that one would need.
 
 ## How to use
-Copy all your resume PDFs in the _/dependency/documents/_ folder. Run the _main.py_ and enter your search query.
+- Client: Install all the dependencies using _<b>npm i</b>_
+- Copy all your resume PDFs in the _/dependency/documents/_ folder. Run the _main.py_ and enter your search query.
 
 ## Dataset Used  
 - [Dataset link](https://github.com/TejasParse/devanagari-recognition-server/blob/master/Transfer%20Analysis.ipynb)
