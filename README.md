@@ -12,3 +12,8 @@
 
 ## How to use
 Copy all your resume PDFs in the _/dependency/documents/_ folder. Run the _main.py_ and enter your search query.
+
+## Dataset Used  
+- [Dataset link](https://github.com/TejasParse/devanagari-recognition-server/blob/master/Transfer%20Analysis.ipynb){:target="_blank"}
+
+## FrontEnd
